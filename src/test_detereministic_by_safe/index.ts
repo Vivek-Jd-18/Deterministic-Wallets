@@ -1,6 +1,6 @@
 import { ethers } from "ethers";
-import { baseRPC, sepoliaRPC } from "./rpc";
-import { keys, proxyAddresses } from "./keys";
+import { baseRPC, sepoliaRPC } from "../../rpc";
+import { keys, proxyAddresses } from "../../keys";
 
 const getTransactionData = async (
     _provider: any,
@@ -38,7 +38,7 @@ const deploy = async (
 
         let transaction = {
             to: _safeProxyFactory,
-            value: ethers.utils.parseEther("0"),
+            value: ethers.parseEther("0"),
             nonce: _nonce,
             chainId: _chainId,
             data: _data,
@@ -54,8 +54,8 @@ const deploy = async (
 };
 
 // providers
-const sepoliaProvider = new ethers.providers.JsonRpcProvider(sepoliaRPC);
-const baseSepoliaProvider = new ethers.providers.JsonRpcProvider(baseRPC);
+const sepoliaProvider = new ethers.JsonRpcProvider(sepoliaRPC);
+const baseSepoliaProvider = new ethers.JsonRpcProvider(baseRPC);
 
 // tx details
 // note: we have to store and use very first transaction hash of wallet deployment, and use manually here.

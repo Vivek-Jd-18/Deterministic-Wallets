@@ -9,6 +9,10 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "ethers": "^5.7.2"
+    "@safe-global/api-kit": "^2.3.0",
+    "@safe-global/protocol-kit": "^3.0.2",
+    "@safe-global/safe-core-sdk-types": "^4.0.2",
+    "dotenv": "^16.4.5",
+    "ethers": "^6.12.0"
   }
 }
